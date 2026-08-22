@@ -15,6 +15,62 @@
       color: transparent;
     }
   }
+  /* Creative Resume - added element only */
+
+.creative-resume {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  z-index: 2;
+}
+
+.creative-resume__label {
+  margin-bottom: 15px;
+  color: #d6a83b;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.creative-resume__image {
+  display: block;
+  transform: rotate(2deg);
+  transition: transform 0.3s ease;
+}
+
+.creative-resume__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 20px 50px rgba(0,0,0,.4);
+}
+
+.creative-resume__image:hover {
+  transform: rotate(0deg) translateY(-6px);
+}
+
+.creative-resume__link {
+  display: inline-block;
+  margin-top: 18px;
+  color: #d6a83b;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .creative-resume {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 280px;
+    margin: 50px auto 0;
+  }
+}
 </style>
 <meta name="description" content="Graphic design portfolio — brand identity, editorial, print and packaging work.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -330,7 +386,7 @@
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="section__label" data-reveal><i></i>03 — Contact</div>
-    <h2 class="contact__title" data-reveal>Let's make something worth.</h2>
+    <h2 class="contact__title" data-reveal>Let's make something worth remembering.</h2>
     <a href="mailto:mohamedsuaib69@gmail.com" class="contact__email" data-reveal>mohamedsuaib69@gmail.com</a>
     <div><a href="tel:+919600913496" class="contact__email" data-reveal>+91 96009 13496</a></div>
     <div class="contact__socials" data-reveal>
@@ -338,6 +394,22 @@
       <a href="https://www.linkedin.com/in/mohamedsuaib69" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="Mohamed_Suaib_Resume.pdf" target="_blank">Resume</a>
     </div>
+    <div class="creative-resume" data-reveal>
+  <div class="creative-resume__label">MY CREATIVE RESUME</div>
+
+  <a href="Suaib_Design_Resume.jpg"
+     target="_blank"
+     class="creative-resume__image">
+    <img src="Suaib_Design_Resumejpg"
+         alt="SUAIB Creative Resume">
+  </a>
+
+  <a href="Suaib_Design_Resume.jpg"
+     target="_blank"
+     class="creative-resume__link">
+    VIEW CREATIVE RESUME ↗
+  </a>
+</div>
   </div>
 </section>
 <footer class="footer">
