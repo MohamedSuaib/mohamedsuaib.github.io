@@ -205,12 +205,24 @@
   .hero__work{margin-top:32px;}
   .hero__work-title{font-family:var(--display);font-weight:700;font-size:1.125rem;line-height:1.2;margin-bottom:16px;}
   .hero__work-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,auto);grid-auto-flow:column;column-gap:32px;row-gap:12px;max-width:640px;}
-  .hero__work-list li{display:flex;align-items:baseline;gap:10px;font-family:var(--body);font-weight:600;font-size:0.9375rem;line-height:1.35;}
-  .hero__work-list li::before{content:'\2197';color:var(--gold);font-size:0.75rem;flex-shrink:0;}
+  .hero__work-list li{display:flex;align-items:center;gap:10px;font-family:var(--body);font-weight:600;font-size:0.9375rem;line-height:1.35;}
+  .hero__work-list li::before{content:'';width:6px;height:6px;background:var(--gold);flex-shrink:0;align-self:center;}
   .hero__actions{margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.14);max-width:640px;}
   @media (max-width:520px){
     .hero__work-list{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row;}
   }
+
+  /* ============ HERO COLOUR ACCENTS ============ */
+  :root{--violet:#7B4DFF;--magenta:#E8366D;--blue:#3B82F6;--accent-grad:linear-gradient(135deg,#E8366D,#7B4DFF 55%,#3B82F6);}
+  .hero{position:relative;background:
+    radial-gradient(55% 48% at 88% 8%,rgba(123,77,255,0.30),transparent 62%),
+    radial-gradient(45% 42% at 4% 96%,rgba(232,54,109,0.20),transparent 62%),
+    radial-gradient(40% 35% at 50% 55%,rgba(59,130,246,0.10),transparent 65%);}
+  .hero__eyebrow i{background:var(--accent-grad);}
+  .hero__work-list li::before{background:var(--accent-grad);}
+  .hero__stat{border:1px solid transparent;border-image:var(--accent-grad) 1;background:rgba(24,24,29,0.92);}
+  .hero__actions{border-top-color:rgba(123,77,255,0.35);}
+  .hero__name span:first-child{background:linear-gradient(90deg,#FFFFFF 60%,#CFC3FF);-webkit-background-clip:text;background-clip:text;color:transparent;}
 
   /* ============ WORK ============ */
   .work-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:28px;align-items:start;}
@@ -343,6 +355,43 @@
     .contact{padding:80px 0;}
     .work-grid{grid-template-columns:1fr;}
   }
+  /* contact glow (kept after base .contact rules so it wins) */
+  .contact{background:
+    radial-gradient(55% 55% at 88% 12%,rgba(123,77,255,0.30),transparent 62%),
+    radial-gradient(45% 50% at 6% 94%,rgba(232,54,109,0.20),transparent 62%),
+    radial-gradient(40% 40% at 50% 55%,rgba(59,130,246,0.10),transparent 65%),
+    #111116;}
+  /* section glow: same violet / magenta / blue haze on Work + About, repeating down tall sections */
+  .section{background-color:var(--paper);background-image:
+    radial-gradient(620px circle at 94% 320px,rgba(123,77,255,0.24),transparent 70%),
+    radial-gradient(560px circle at 4% 320px,rgba(232,54,109,0.17),transparent 70%),
+    radial-gradient(520px circle at 50% 320px,rgba(59,130,246,0.09),transparent 70%);
+    background-size:100% 2600px,100% 2600px,100% 2600px;
+    background-position:0 0,0 1300px,0 650px;
+    background-repeat:repeat-y;}
+  /* gold text swap: gold stays on buttons + small UI fills, text accents move to the pink / violet / blue family */
+  :root{--text-grad:linear-gradient(90deg,#FF7FA9,#B79CFF 55%,#7FB2FF);}
+  .hero__tagline{display:block;width:fit-content;max-width:100%;background:var(--text-grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero__stat-row strong{background:var(--text-grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .contact__email{background:var(--text-grad);-webkit-background-clip:text;background-clip:text;color:transparent;border-bottom-color:rgba(183,156,255,0.4);}
+  .contact__email:hover{border-color:#B79CFF;}
+  .contact__socials a::after{background:#B79CFF;}
+  .contact{border-top-color:rgba(123,77,255,0.30);}
+  .work-card__role{color:#B9A4FF;}
+  /* gradient buttons: gold fills move to the same pink / violet / blue gradient, white text */
+  .nav__cta,.btn--primary,.work-card__view,.work-card__tag--after{background:var(--accent-grad);color:#FFFFFF;font-weight:700;}
+  .nav__cta:hover,.btn--primary:hover{background:#FFFFFF;color:#0B0B0D;}
+  .btn--ghost:hover{border-color:#B79CFF;color:#B79CFF;}
+  .nav__links a::after{background:var(--accent-grad);}
+  .lightbox__close:hover{background:var(--accent-grad);border-color:transparent;color:#FFFFFF;}
+  :focus-visible{outline-color:#B79CFF;}
+  /* palette strips: divider lines + footer colour bar use the pink / violet / blue palette */
+  .colorbar span:nth-child(1){background:#E8366D;}
+  .colorbar span:nth-child(2){background:#7B4DFF;}
+  .colorbar span:nth-child(3){background:#3B82F6;}
+  .colorbar span:nth-child(4){background:#B79CFF;}
+  .divider{background:linear-gradient(90deg,#E8366D,#7B4DFF 40%,#3B82F6 75%,#B79CFF);}
+  .divider span:nth-child(n){background:transparent;}
 </style>
 </head>
 <body>
